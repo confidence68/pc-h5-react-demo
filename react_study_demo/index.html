@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React 学习 Demo</title>
+  <!-- 
+    这是应用的 HTML 入口文件
+    
+    Vite 模式：
+    - 直接使用此文件，通过 <script type="module"> 加载 ES Module
+    - 开发时浏览器直接请求源文件，Vite 按需编译
+    
+    Webpack 模式：
+    - HtmlWebpackPlugin 使用此文件作为模板
+    - 自动注入打包后的 JS/CSS 资源
+  -->
+</head>
+<body>
+  <!-- React 应用的挂载点 -->
+  <div id="root"></div>
+  
+  <!-- 
+    Vite 开发模式下的入口脚本
+    type="module" 告诉浏览器这是 ES Module
+    Webpack 打包时会忽略这个标签，自动注入打包后的脚本
+  -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
+
+

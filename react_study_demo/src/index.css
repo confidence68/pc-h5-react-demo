@@ -1,0 +1,445 @@
+/**
+ * 全局样式文件
+ * 
+ * 包含：
+ * 1. CSS 变量定义（主题色、间距等）
+ * 2. 重置样式
+ * 3. 全局通用样式
+ * 4. 组件样式
+ */
+
+/* ==================== CSS 变量定义 ==================== */
+:root {
+  /* 主题色 */
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --secondary-color: #61dafb;
+  
+  /* 背景色 */
+  --bg-color: #242424;
+  --bg-light: #1a1a1a;
+  --bg-card: #2d2d2d;
+  
+  /* 文字色 */
+  --text-color: rgba(255, 255, 255, 0.87);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  
+  /* 边框和阴影 */
+  --border-color: #3d3d3d;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  
+  /* 间距 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* 圆角 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* ==================== 重置样式 ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+               'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ==================== 全局通用样式 ==================== */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input, textarea, select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-color);
+}
+
+/* ==================== 布局样式 ==================== */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 侧边导航栏 */
+.sidebar {
+  width: 220px;
+  background-color: var(--bg-light);
+  padding: var(--spacing-lg);
+  border-right: 1px solid var(--border-color);
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  color: var(--secondary-color);
+  font-size: 18px;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.sidebar nav a {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: var(--bg-card);
+  color: var(--primary-color);
+}
+
+/* 主内容区 */
+.main-content {
+  flex: 1;
+  margin-left: 220px;
+  padding: var(--spacing-xl);
+  max-width: 1200px;
+}
+
+/* ==================== 页面标题样式 ==================== */
+.page-title {
+  font-size: 28px;
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.section-title {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+/* ==================== 演示卡片样式 ==================== */
+.demo-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow);
+}
+
+.demo-card h3 {
+  color: var(--secondary-color);
+  font-size: 18px;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.demo-card h3::before {
+  content: '📌';
+}
+
+.demo-card p {
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-md);
+  font-size: 14px;
+}
+
+.demo-card .description {
+  background-color: var(--bg-light);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
+  border-left: 3px solid var(--primary-color);
+}
+
+/* ==================== 代码展示样式 ==================== */
+.code-block {
+  background-color: var(--bg-light);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  margin: var(--spacing-md) 0;
+}
+
+code {
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  background-color: var(--bg-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* ==================== 演示区域样式 ==================== */
+.demo-area {
+  background-color: var(--bg-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-md);
+}
+
+.demo-area h4 {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 演示结果显示 */
+.result {
+  background-color: var(--bg-card);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin-top: var(--spacing-md);
+  border: 1px dashed var(--border-color);
+}
+
+.result-label {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.result-value {
+  color: var(--secondary-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ==================== 按钮组样式 ==================== */
+.button-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin: var(--spacing-md) 0;
+}
+
+.button-group button {
+  min-width: 100px;
+}
+
+.btn-secondary {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-card);
+  border-color: var(--primary-color);
+}
+
+.btn-success {
+  background-color: #10b981;
+}
+
+.btn-success:hover {
+  background-color: #059669;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+/* ==================== 列表样式 ==================== */
+.item-list {
+  list-style: none;
+}
+
+.item-list li {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-card);
+  margin-bottom: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ==================== 表格样式 ==================== */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-md) 0;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+  background-color: var(--bg-light);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ==================== 组件通信演示样式 ==================== */
+.component-box {
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.component-box.parent {
+  border-color: var(--primary-color);
+}
+
+.component-box.child {
+  border-color: var(--secondary-color);
+  margin-left: var(--spacing-lg);
+}
+
+.component-box.sibling {
+  border-color: #f59e0b;
+}
+
+.component-label {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: var(--spacing-sm);
+}
+
+.component-label.parent {
+  background-color: var(--primary-color);
+}
+
+.component-label.child {
+  background-color: var(--secondary-color);
+  color: #000;
+}
+
+.component-label.sibling {
+  background-color: #f59e0b;
+  color: #000;
+}
+
+/* ==================== 提示信息样式 ==================== */
+.info-box {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin: var(--spacing-md) 0;
+}
+
+.info-box.tip {
+  background-color: rgba(100, 108, 255, 0.1);
+  border-left: 4px solid var(--primary-color);
+}
+
+.info-box.warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid #f59e0b;
+}
+
+.info-box.success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-left: 4px solid #10b981;
+}
+
+/* ==================== 动画效果 ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: var(--spacing-md);
+  }
+  
+  .app-container {
+    flex-direction: column;
+  }
+}
+
