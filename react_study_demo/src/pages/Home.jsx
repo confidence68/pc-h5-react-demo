@@ -36,6 +36,12 @@ function Home() {
       title: '路由演示',
       description: 'React Router v6、嵌套路由、路由参数',
       path: '/router'
+    },
+    {
+      icon: '🌐',
+      title: 'API 请求',
+      description: '基于 Axios的请求封装方案，支持多种特性',
+      path: '/api'
     }
   ]
   

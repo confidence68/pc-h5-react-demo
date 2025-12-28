@@ -1,2 +1,7 @@
 node_modules
 package-lock.json
+dist/
+dist-webpack/
+*/dist/
+*/node_modules/
+*/package-lock.json

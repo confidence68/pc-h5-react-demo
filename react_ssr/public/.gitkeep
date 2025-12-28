@@ -1,0 +1,3 @@
+# 此文件用于保持 public 目录存在
+# Webpack 构建会生成 bundle.js 和 styles.css 到此目录
+
