@@ -1,0 +1,29 @@
+{
+  "name": "nextjs-ssr-tutorial",
+  "version": "1.0.0",
+  "description": "Next.js SSR 教学项目 - 学习 Next.js 核心 API 和路由系统",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "ssr",
+    "教学",
+    "服务端渲染"
+  ],
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4"
+  }
+}
+
